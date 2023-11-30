@@ -18,8 +18,11 @@ artists = artist_repository.all()
 for artist in artists:
     print(artist)
 
-
+#Print ALL rows
 album_repository = AlbumRepository(connection)
 albums = album_repository.all()
 for album in albums:
     print(album)
+
+#Print just the choos row
+print (album_repository.find(1))
