@@ -45,13 +45,13 @@ class Application():
 )
         x = input("Enter your choice:")
     
-        if x == input(1):
+        if x == 1:
             album_repository = AlbumRepository(self._connection)
             albums = album_repository.all()
             for album in albums:
                 print(f"{album.id}: {album.title})")
 
-        if x == input(1):
+        if x == 2:
             artist_repository = ArtistRepository(self._connection)
             artists = artist_repository.all()
             for artist in artists:
