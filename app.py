@@ -37,22 +37,26 @@ class Application():
         self._connection.seed("seeds/music_library.sql")
 
     def run(self):
-        print("Welcome to the music library manager!" 
-            "What would you like to do?"
-            "1 - List all albums"
-            "2 - List all artists"
+        print("Welcome to the music library manager!\n" 
+            "What would you like to do?\n"
+            "1 - List all albums\n"
+            "2 - List all artists\n"
 
 )
-        x = input()
-        print("Enter your choice:" + x)
-
+        x = input("Enter your choice:")
     
+        if x == input(1):
+            album_repository = AlbumRepository(self._connection)
+            albums = album_repository.all()
+            for album in albums:
+                print(f"{album.id}: {album.title})")
 
-#     artist_repository = ArtistRepository(self._connection)
-#     artists = artist_repository.all()
+        if x == input(1):
+            artist_repository = ArtistRepository(self._connection)
+            artists = artist_repository.all()
+            for artist in artists:
+                print(f"{artist.id}: {artist.name} ({artist.genre})")
 
-#     for artist in artists:
-#         print(f"{artist.id}: {artist.name} ({artist.genre})")
 
 if __name__ == '__main__':
     app = Application()
