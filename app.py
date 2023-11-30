@@ -44,18 +44,19 @@ class Application():
 
 )
         x = input("Enter your choice:")
+        x = int(x)
     
         if x == 1:
             album_repository = AlbumRepository(self._connection)
             albums = album_repository.all()
             for album in albums:
-                print(f"{album.id}: {album.title})")
+                print(f"{album.id}: {album.title}")
 
         if x == 2:
             artist_repository = ArtistRepository(self._connection)
             artists = artist_repository.all()
             for artist in artists:
-                print(f"{artist.id}: {artist.name} ({artist.genre})")
+                print(f"{artist.id}: {artist.name}")
 
 
 if __name__ == '__main__':
