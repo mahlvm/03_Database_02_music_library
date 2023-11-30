@@ -37,8 +37,15 @@ class Application():
         self._connection.seed("seeds/music_library.sql")
 
     def run(self):
-        input = input("Welcome to the music library manager! /n What would you like to do? /n 1 - List all albums /n 2 - List all artists")
-        print(input)
+        print("Welcome to the music library manager!" 
+            "What would you like to do?"
+            "1 - List all albums"
+            "2 - List all artists"
+
+)
+        x = input()
+        print("Enter your choice:" + x)
+
     
 
 #     artist_repository = ArtistRepository(self._connection)
